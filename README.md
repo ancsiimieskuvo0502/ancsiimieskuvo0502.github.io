@@ -1,2 +1,2 @@
 # ancsiimieskuvo0502.github.io
-Kuti Imre és Ancsi John RSVP weboldala
+Kuti Imre és John Ancsi RSVP weboldala
