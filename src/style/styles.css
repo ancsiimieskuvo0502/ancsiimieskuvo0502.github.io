@@ -180,6 +180,11 @@ p {
         transition: background-color 0.3s;
         z-index: 2000; /* Ensure it's above other elements */
     }
+    .menu-button span{
+        padding: 10px;
+        background-color: #37473b;
+        border-radius: 20px;
+    }
     .menu-button:hover {
         background-color: #ffffff;
     }
