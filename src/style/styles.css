@@ -143,13 +143,13 @@ p {
         width: 100%;
         max-width: none;
         border-radius: 0;
-        background: white; /* Ensure a solid background */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
         padding: 20px;
     }
     html, body {
-        overflow-x: hidden; /* Disable horizontal scrolling */
-        margin: 0; /* Remove any default margin */
-        padding: 0; /* Remove any default padding */
+        overflow-x: hidden; 
+        margin: 0; 
+        padding: 0; 
         width: 100%;
         height: 100%;
     }
@@ -178,7 +178,7 @@ p {
         padding: 15px;
         cursor: pointer;
         transition: background-color 0.3s;
-        z-index: 2000; /* Ensure it's above other elements */
+        z-index: 2000; 
     }
     .menu-button span{
         padding: 10px;
@@ -208,16 +208,16 @@ p {
         z-index: 1999;
     }
     .menu-list.active {
-        bottom: 50px; /* Make space for the button */
+        bottom: 50px; 
     }
 
-    /* Arrow rotation when menu is open */
+    
     .menu-button.active span {
         transform: rotate(180deg);
     }
 }
 
-/* Show the mobile menu button and arrow only on mobile */
+
 @media (max-width: 768px) {
     .menu-button {
         display: block;
