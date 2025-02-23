@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style/styles.css">
+    <link rel="stylesheet" href="/src/style/program_styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <title>Imi & Ancsi RSVP</title>
+</head>
+<body style="background-image: url('src/img/background.png');">
+
+<header>
+    <a href="index.html" class="home-link">
+        <i class="material-icons">home</i>
+    </a>
+    <div class="container">
+        <h1>Ancsi & Imi</h1>
+        <p class="date">2025.05.02</p>
+    </div>
+</header>
+<div class="program-container">
+        <h1 style="font-family: 'Crimson Text', 'serif'">Fontos Információ</h1>
+        <br>
+        <h2 style="color: tomato">Estére mindenki készüljön meleg ruhával, mert nagyon le tud hűlni az idő!</h2>
+        <br>
+        <h2>Nászajándék</h2>
+        <p> Aki nászunkra szép ajándékot adna, <br>
+            A reánk szánt összeget tegye borítékba:<br>
+            A legtöbbet ezzel segít nekünk,<br>
+            Támogatva induló közös életünk.</p>
+        <br>
+</div>
+
+<!-- Menu For Desktop -->
+<nav class="menu">
+    <!-- Main menu items -->
+    <ul class="menu-list">
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeQYvPYdAzVF7lD_lwIDlWYP7TjDlukL7JdhlGJNkh1lgVwxw/viewform">Visszajelzés</a></li>
+        <li><a href="info.html">Fontos infó</a></li>
+        <li><a href="gallery.html">Galéria</a></li>
+        <li><a href="program.html">Program</a></li>
+    </ul>
+    <!-- Menu For Mobile -->
+    <div class="menu-button" id="menuButton">
+        <span>⬆</span> <!-- Arrow icon -->
+    </div>
+</nav>
+<!-- Mobile Menu Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.getElementById("menuButton");
+        const menuList = document.querySelector(".menu-list");
+
+        if (!menuButton || !menuList) {
+            console.error("Menu button or menu list not found!");
+            return;
+        }
+
+        menuButton.addEventListener("click", function () {
+            if (menuList.style.display === "none" || menuList.style.display === "") {
+                menuList.style.display = "flex";
+                setTimeout(() => menuList.classList.add("active"), 10); // Delay for transition
+            } else {
+                menuList.classList.remove("active");
+                setTimeout(() => menuList.style.display = "none", 300); // Wait for animation to end
+            }
+            menuButton.classList.toggle("active");
+        });
+    });
+</script>
+
+</body>
+</html>
