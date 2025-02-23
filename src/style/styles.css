@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: rgba(12, 67, 23, 0.82);
+    display: flex;
+    flex-direction: column;
+    position: relative;  /* Make sure the body doesn't overflow */
+    overflow-y: auto;    /* Allow vertical scrolling */
+}
+.container {
+    width: 100%;
+}
+
+header {
+    /*background-color: rgba(255,255,255,0.9);*/
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+    width: 100%;
+    max-height: 25vh;
+    grid-row: 1;
+    text-align: center;
+    position: absolute;
+    margin-bottom: 20px;
+    z-index: 100000;
+}
+.home-link {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    text-decoration: none; /* Remove underline from link */
+}
+.home-link i {
+    font-size: 30px; /* Adjust icon size */
+    color: #333; /* Adjust icon color */
+}
+#home-page-img{
+    padding: 30px;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em; /* Big title */
+    font-weight: bold;
+    font-style: unset; !important;
+    font-family: Centaur, "Times New Roman", serif;
+    color: goldenrod; /* Darker text for elegance */
+    margin-bottom: 10px;
+}
+h2 {
+     font-weight: bold;
+     color: goldenrod; /* Darker text for elegance */
+     margin-bottom: 10px;
+ }
+
+.date {
+    font-family: Centaur;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #37473b; /* Subtle gray for the date */
+}
+
+p {
+    font-size: 1.5em;
+}
+.menu {
+    /*background-color: white;*/
+    bottom: -10px;
+    background-size: 1px,0;
+    position: fixed;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.menu-list li a {
+    border-radius: 10px;
+    background-color: #37473b ;
+    text-decoration: none;
+    color: goldenrod;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+#rsvp{
+    border-radius: 10px;
+    background-color: #37473b ;
+    text-decoration: none;
+    color: goldenrod;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+
+}
+
+.menu-list li a:hover {
+    background-color: rgba(12, 67, 23, 0.82);
+    border-radius: 15px;
+}
+#rsvp:hover{
+    background-color: rgba(12, 67, 23, 0.82);
+    border-radius: 15px;
+}
+
+/* Button to toggle the menu on mobile */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(12, 67, 23, 0.82);
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        top: 0;
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        background: white; /* Ensure a solid background */
+        padding: 20px;
+    }
+    html, body {
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        width: 100%;
+        height: 100%;
+    }
+
+    /* New mobile menu button */
+    .menu {
+        background-color: white;
+        background-size: 1px,0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    .menu-list li a {
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+    .menu-button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        color: goldenrod;
+        font-size: 1.5em;
+        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 2000; /* Ensure it's above other elements */
+    }
+    .menu-button:hover {
+        background-color: #ffffff;
+    }
+    .menu-button span {
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    /* Rolling menu */
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        transition: bottom 0.3s ease-in-out;
+        padding: 20px 0;
+        z-index: 1999;
+    }
+    .menu-list.active {
+        bottom: 50px; /* Make space for the button */
+    }
+
+    /* Arrow rotation when menu is open */
+    .menu-button.active span {
+        transform: rotate(180deg);
+    }
+}
+
+/* Show the mobile menu button and arrow only on mobile */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        text-align: center;
+    }
+
+    .menu-button span {
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    /* Show the menu on mobile when button is clicked */
+    .menu-list.active {
+        display: block;
+    }
+
+    /* Arrow rotation when menu is open */
+    .menu-button.active span {
+        transform: rotate(180deg); /* Arrow points down when menu is open */
+    }
+
+
+
+}
+
+/* Hide the mobile menu button and arrow on desktop */
+@media (min-width: 769px) {
+    .menu-button {
+        display: none;
+    }
+
+    .menu-list {
+        display: flex; /* Keep the desktop menu horizontal */
+        justify-content: space-around;
+    }
+}
